@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotherBaby International - For Moms and Kids 0-15</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">MotherBaby International</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#suggestions">Suggestions</a></li>
+                <li><a href="#vote">Vote</a></li>
+                <li><a href="#community">Community</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to MotherBaby International</h1>
+            <p>A positive community for moms and kids aged 0-15. Together we create better products for our children!</p>
+            <button class="cta-button" onclick="scrollToSection('suggestions')">Share Your Idea</button>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="section-title">Our Community Features</h2>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">💡</div>
+                <h3>Share Ideas</h3>
+                <p>Submit your product suggestions and improvements</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🗳️</div>
+                <h3>Monthly Voting</h3>
+                <p>Vote for the best ideas each month</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3>Win Rewards</h3>
+                <p>Get recognized and rewarded for your contributions</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Products by Age Group</h2>
+        <div class="age-groups">
+            <div class="age-group">
+                <h3>0-3 Years</h3>
+                <p>Baby care, safety, and development</p>
+            </div>
+            <div class="age-group">
+                <h3>4-7 Years</h3>
+                <p>Educational toys and activities</p>
+            </div>
+            <div class="age-group">
+                <h3>8-12 Years</h3>
+                <p>Learning tools and hobbies</p>
+            </div>
+            <div class="age-group">
+                <h3>13-15 Years</h3>
+                <p>Teen products and life skills</p>
+            </div>
+        </div>
+
+        <h2 class="section-title" id="suggestions">Share Your Product Idea</h2>
+        <div class="suggestion-form">
+            <form id="suggestionForm">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="ageGroup">Age Group:</label>
+                    <select id="ageGroup" name="ageGroup" required>
+                        <option value="">Select Age Group</option>
+                        <option value="0-3">0-3 Years</option>
+                        <option value="4-7">4-7 Years</option>
+                        <option value="8-12">8-12 Years</option>
+                        <option value="13-15">13-15 Years</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="suggestion">Your Product Suggestion:</label>
+                    <textarea id="suggestion" name="suggestion" placeholder="Describe your product idea in detail..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="improvement">How can this improve children's lives?</label>
+                    <textarea id="improvement" name="improvement" placeholder="Explain the benefits..." required></textarea>
+                </div>
+                <button type="submit" class="cta-button" style="width: 100%;">Submit Suggestion</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 MotherBaby International. A positive community for moms and kids.</p>
+        <p>Every mom is a designer! Together we create better products for our children.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
