@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-purple: #8a4fff;
-            --primary-pink: #ff7eb3;
+              --primary-pink: #ff7eb3;
             --soft-blue: #6dcff6;
             --soft-green: #a8e6cf;
             --light-bg: #f9f7ff;
@@ -16,12 +15,12 @@
             --white: #ffffff;
             --shadow: 0 10px 30px rgba(138, 79, 255, 0.1);
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+           * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: var(--light-bg); color: var(--dark-text); line-height: 1.7; }
         
         /* === 导航栏 - 更现代 === */
         .navbar {
-            background: linear-gradient(135deg, var(--primary-purple) 0%, #b381ff 100%);
+                background: linear-gradient(135deg, var(--primary-purple) 0%, #b381ff 100%);
             padding: 1.2rem 0;
             position: fixed; width: 100%; top: 0; z-index: 1000;
             box-shadow: var(--shadow);
@@ -31,7 +30,7 @@
             display: flex; justify-content: space-between; align-items: center;
             padding: 0 2rem;
         }
-        .logo { color: var(--white); font-size: 1.8rem; font-weight: 800; display: flex; align-items: center; }
+         .logo { color: var(--white); font-size: 1.8rem; font-weight: 800; display: flex; align-items: center; }
         .logo i { margin-right: 10px; color: var(--soft-green); }
         .nav-links { display: flex; list-style: none; gap: 2.5rem; }
         .nav-links a { color: var(--white); text-decoration: none; font-weight: 600; font-size: 1.05rem; padding: 0.5rem 0; position: relative; transition: color 0.3s; }
@@ -41,14 +40,14 @@
         
         /* === 英雄区域 - 更吸引人 === */
         .hero {
-            background: linear-gradient(rgba(138, 79, 255, 0.85), rgba(255, 126, 179, 0.85)), 
+               background: linear-gradient(rgba(138, 79, 255, 0.85), rgba(255, 126, 179, 0.85)), 
                         url('https://images.unsplash.com/photo-1516627145497-ae695ee7f63d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover; background-position: center;
             color: var(--white); text-align: center;
             padding: 10rem 2rem 6rem; margin-top: 80px;
             border-radius: 0 0 40px 40px;
         }
-        .hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; font-weight: 800; text-shadow: 1px 1px 3px rgba(0,0,0,0.2); }
+          .hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; font-weight: 800; text-shadow: 1px 1px 3px rgba(0,0,0,0.2); }
         .hero p { font-size: 1.3rem; max-width: 700px; margin: 0 auto 3rem; font-weight: 300; }
         .hero-buttons { display: flex; gap: 1.5rem; justify-content: center; }
         .cta-button {
@@ -57,20 +56,18 @@
             border-radius: 50px; font-size: 1.1rem; font-weight: 700; cursor: pointer;
             transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(255, 126, 179, 0.4);
         }
-        .cta-button:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(255, 126, 179, 0.6); }
+         .cta-button:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(255, 126, 179, 0.6); }
         .secondary-button {
             background: transparent; color: var(--white); border: 2px solid var(--white);
             padding: 1rem 2.5rem; border-radius: 50px; font-size: 1.1rem; font-weight: 700; cursor: pointer;
             transition: all 0.3s;
         }
         .secondary-button:hover { background: rgba(255,255,255,0.2); transform: translateY(-3px); }
-        
-        /* === 功能卡片 - 更精致 === */
+         /* === 功能卡片 - 更精致 === */
         .container { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; }
         .section-title { text-align: center; margin-bottom: 3.5rem; color: var(--primary-purple); font-size: 2.5rem; font-weight: 800; }
         .section-subtitle { text-align: center; color: #666; font-size: 1.2rem; margin-top: -2.5rem; margin-bottom: 3rem; }
-        
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 5rem; }
+         .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 5rem; }
         .feature-card {
             background: var(--white); padding: 2.5rem; border-radius: 20px; text-align: center;
             box-shadow: var(--shadow); transition: all 0.4s ease; border-top: 5px solid var(--primary-purple);
@@ -114,8 +111,7 @@
         .footer-logo { font-size: 2rem; margin-bottom: 1.5rem; color: var(--soft-green); }
         .footer-tagline { font-size: 1.2rem; max-width: 600px; margin: 0 auto 2.5rem; opacity: 0.9; }
         .copyright { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); opacity: 0.7; }
-        
-        /* === 响应式设计 === */
+         /* === 响应式设计 === */
         @media (max-width: 768px) {
             .nav-links { gap: 1.2rem; }
             .hero h1 { font-size: 2.5rem; }
@@ -140,8 +136,7 @@
             </ul>
         </div>
     </nav>
-
-    <!-- 英雄/欢迎区域 -->
+     <!-- 英雄/欢迎区域 -->
     <section class="hero" id="home">
         <h1>Every Mom is a Designer</h1>
         <p>Join our global community of creative parents. Share ideas, vote on innovations, and help shape better products for children aged 0-15. Your voice matters!</p>
@@ -150,7 +145,6 @@
             <button class="secondary-button" onclick="scrollToSection('vote')"><i class="fas fa-vote-yea"></i> See Top Votes</button>
         </div>
     </section>
-
     <!-- 核心功能 -->
     <section class="container">
         <h2 class="section-title">How Our Community Works</h2>
@@ -172,7 +166,6 @@
                 <p>Top-voted ideas earn rewards and get developed. See your concept become a real product!</p>
             </div>
         </div>
-
         <!-- 年龄分组 -->
         <h2 class="section-title">Focused on Every Stage</h2>
         <p class="section-subtitle">We create products tailored to specific age groups, from infancy to teen years.</p>
@@ -198,8 +191,7 @@
                 <p>Tech, lifestyle, and life-skill products designed for young teens.</p>
             </div>
         </div>
-
-        <!-- 建议表单 -->
+         <!-- 建议表单 -->
         <h2 class="section-title" id="suggestions">Share Your Vision</h2>
         <p class="section-subtitle">Got an idea that could make parenting easier or childhood brighter? Tell us!</p>
         <div class="suggestion-form-container">
@@ -236,7 +228,6 @@
             </form>
         </div>
     </section>
-
     <footer>
         <div class="footer-logo"><i class="fas fa-hands-helping"></i> MotherBaby International</div>
         <p class="footer-tagline">A 100% positive, global community powered by moms. Together, we design the future for our children.</p>
@@ -245,7 +236,6 @@
             Made with <i class="fas fa-heart" style="color:#ff7eb3;"></i> for parents everywhere.
         </div>
     </footer>
-
     <script>
         // 平滑滚动
         function scrollToSection(sectionId) {
