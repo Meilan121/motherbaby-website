@@ -3,110 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MotherBaby International - For Moms and Kids 0-15</title>
-    <link rel="stylesheet" href="style.css">
+    <title>MotherBaby International - Where Every Mom is a Designer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-purple: #8a4fff;
+            --primary-pink: #ff7eb3;
+            --soft-blue: #6dcff6;
+            --soft-green: #a8e6cf;
+            --light-bg: #f9f7ff;
+            --dark-text: #333344;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(138, 79, 255, 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--light-bg); color: var(--dark-text); line-height: 1.7; }
+        
+        /* === 导航栏 - 更现代 === */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, #b381ff 100%);
+            padding: 1.2rem 0;
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+        .nav-container {
+            max-width: 1200px; margin: 0 auto; 
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 2rem;
+        }
+        .logo { color: var(--white); font-size: 1.8rem; font-weight: 800; display: flex; align-items: center; }
+        .logo i { margin-right: 10px; color: var(--soft-green); }
+        .nav-links { display: flex; list-style: none; gap: 2.5rem; }
+        .nav-links a { color: var(--white); text-decoration: none; font-weight: 600; font-size: 1.05rem; padding: 0.5rem 0; position: relative; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--soft-green); }
+        .nav-links a::after { content: ''; position: absolute; width: 0; height: 3px; background: var(--soft-green); left: 0; bottom: -5px; transition: width 0.3s; }
+        .nav-links a:hover::after { width: 100%; }
+        
+        /* === 英雄区域 - 更吸引人 === */
+        .hero {
+            background: linear-gradient(rgba(138, 79, 255, 0.85), rgba(255, 126, 179, 0.85)), 
+                        url('https://images.unsplash.com/photo-1516627145497-ae695ee7f63d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; background-position: center;
+            color: var(--white); text-align: center;
+            padding: 10rem 2rem 6rem; margin-top: 80px;
+            border-radius: 0 0 40px 40px;
+        }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; font-weight: 800; text-shadow: 1px 1px 3px rgba(0,0,0,0.2); }
+        .hero p { font-size: 1.3rem; max-width: 700px; margin: 0 auto 3rem; font-weight: 300; }
+        .hero-buttons { display: flex; gap: 1.5rem; justify-content: center; }
+        .cta-button {
+            background: linear-gradient(to right, var(--primary-pink), #ff9ec7);
+            color: var(--white); padding: 1rem 2.5rem; border: none;
+            border-radius: 50px; font-size: 1.1rem; font-weight: 700; cursor: pointer;
+            transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(255, 126, 179, 0.4);
+        }
+        .cta-button:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(255, 126, 179, 0.6); }
+        .secondary-button {
+            background: transparent; color: var(--white); border: 2px solid var(--white);
+            padding: 1rem 2.5rem; border-radius: 50px; font-size: 1.1rem; font-weight: 700; cursor: pointer;
+            transition: all 0.3s;
+        }
+        .secondary-button:hover { background: rgba(255,255,255,0.2); transform: translateY(-3px); }
+        
+        /* === 功能卡片 - 更精致 === */
+        .container { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; }
+        .section-title { text-align: center; margin-bottom: 3.5rem; color: var(--primary-purple); font-size: 2.5rem; font-weight: 800; }
+        .section-subtitle { text-align: center; color: #666; font-size: 1.2rem; margin-top: -2.5rem; margin-bottom: 3rem; }
+        
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 5rem; }
+        .feature-card {
+            background: var(--white); padding: 2.5rem; border-radius: 20px; text-align: center;
+            box-shadow: var(--shadow); transition: all 0.4s ease; border-top: 5px solid var(--primary-purple);
+            position: relative; overflow: hidden;
+        }
+        .feature-card:hover { transform: translateY(-15px); box-shadow: 0 20px 40px rgba(138, 79, 255, 0.15); }
+        .feature-icon { font-size: 3.5rem; margin-bottom: 1.5rem; color: var(--primary-purple); }
+        .feature-card h3 { margin-bottom: 1rem; color: var(--dark-text); font-size: 1.5rem; }
+        
+        /* === 年龄分组 - 更可视化 === */
+        .age-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 5rem; }
+        .age-group {
+            background: var(--white); padding: 2rem; border-radius: 15px;
+            box-shadow: var(--shadow); text-align: center; transition: transform 0.3s;
+            border-left: 5px solid var(--soft-blue);
+        }
+        .age-group:hover { transform: scale(1.05); }
+        .age-group h3 { color: var(--primary-purple); margin-bottom: 1rem; font-size: 1.4rem; }
+        .age-icon { font-size: 2.5rem; margin-bottom: 1rem; color: var(--soft-blue); display: block; }
+        
+        /* === 建议表单 - 更友好 === */
+        .suggestion-form-container { background: var(--white); padding: 3rem; border-radius: 25px; box-shadow: var(--shadow); max-width: 800px; margin: 0 auto; }
+        .suggestion-form { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .form-group { margin-bottom: 1.8rem; }
+        .form-group.full-width { grid-column: span 2; }
+        .form-group label { display: block; margin-bottom: 0.8rem; font-weight: 600; color: var(--dark-text); font-size: 1.1rem; }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%; padding: 1rem; border: 2px solid #e6e0ff; border-radius: 12px;
+            font-size: 1rem; transition: border-color 0.3s; background-color: #fbfaff;
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none; border-color: var(--primary-purple); background-color: var(--white);
+        }
+        .form-group textarea { height: 150px; resize: vertical; }
+        
+        /* === 页脚 - 更完整 === */
+        footer {
+            background: linear-gradient(135deg, var(--dark-text) 0%, #555566 100%);
+            color: var(--white); text-align: center; padding: 4rem 2rem; margin-top: 6rem;
+        }
+        .footer-logo { font-size: 2rem; margin-bottom: 1.5rem; color: var(--soft-green); }
+        .footer-tagline { font-size: 1.2rem; max-width: 600px; margin: 0 auto 2.5rem; opacity: 0.9; }
+        .copyright { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); opacity: 0.7; }
+        
+        /* === 响应式设计 === */
+        @media (max-width: 768px) {
+            .nav-links { gap: 1.2rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .suggestion-form { grid-template-columns: 1fr; }
+            .form-group.full-width { grid-column: span 1; }
+            .features, .age-groups { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
+    <!-- 导航栏 -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">MotherBaby International</div>
+            <div class="logo"><i class="fas fa-hands-helping"></i> MotherBaby Intl</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#products">Products</a></li>
                 <li><a href="#suggestions">Suggestions</a></li>
-                <li><a href="#vote">Vote</a></li>
+                <li><a href="#vote">Vote <span class="vote-badge">Live</span></a></li>
                 <li><a href="#community">Community</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- 英雄/欢迎区域 -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Welcome to MotherBaby International</h1>
-            <p>A positive community for moms and kids aged 0-15. Together we create better products for our children!</p>
-            <button class="cta-button" onclick="scrollToSection('suggestions')">Share Your Idea</button>
+        <h1>Every Mom is a Designer</h1>
+        <p>Join our global community of creative parents. Share ideas, vote on innovations, and help shape better products for children aged 0-15. Your voice matters!</p>
+        <div class="hero-buttons">
+            <button class="cta-button" onclick="scrollToSection('suggestions')"><i class="fas fa-lightbulb"></i> Share Your Idea</button>
+            <button class="secondary-button" onclick="scrollToSection('vote')"><i class="fas fa-vote-yea"></i> See Top Votes</button>
         </div>
     </section>
 
+    <!-- 核心功能 -->
     <section class="container">
-        <h2 class="section-title">Our Community Features</h2>
+        <h2 class="section-title">How Our Community Works</h2>
+        <p class="section-subtitle">From idea to reality – be part of the entire creative journey.</p>
         <div class="features">
             <div class="feature-card">
                 <div class="feature-icon">💡</div>
-                <h3>Share Ideas</h3>
-                <p>Submit your product suggestions and improvements</p>
+                <h3>Share & Inspire</h3>
+                <p>Submit your product ideas or improvements. Describe the need you see as a parent.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🗳️</div>
-                <h3>Monthly Voting</h3>
-                <p>Vote for the best ideas each month</p>
+                <h3>Vote & Decide</h3>
+                <p>Each month, our community votes on the most promising suggestions. Every member gets a say.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🏆</div>
-                <h3>Win Rewards</h3>
-                <p>Get recognized and rewarded for your contributions</p>
+                <h3>Win & Create</h3>
+                <p>Top-voted ideas earn rewards and get developed. See your concept become a real product!</p>
             </div>
         </div>
 
-        <h2 class="section-title">Products by Age Group</h2>
+        <!-- 年龄分组 -->
+        <h2 class="section-title">Focused on Every Stage</h2>
+        <p class="section-subtitle">We create products tailored to specific age groups, from infancy to teen years.</p>
         <div class="age-groups">
             <div class="age-group">
+                <span class="age-icon">👶</span>
                 <h3>0-3 Years</h3>
-                <p>Baby care, safety, and development</p>
+                <p>Safety, sensory development, and essential care products for our littlest ones.</p>
             </div>
             <div class="age-group">
+                <span class="age-icon">🧒</span>
                 <h3>4-7 Years</h3>
-                <p>Educational toys and activities</p>
+                <p>Educational toys, creative play, and tools that make learning fun.</p>
             </div>
             <div class="age-group">
+                <span class="age-icon">🧑</span>
                 <h3>8-12 Years</h3>
-                <p>Learning tools and hobbies</p>
+                <p>Skill-building hobbies, STEM kits, and products that support growing independence.</p>
             </div>
             <div class="age-group">
+                <span class="age-icon">🧔</span>
                 <h3>13-15 Years</h3>
-                <p>Teen products and life skills</p>
+                <p>Tech, lifestyle, and life-skill products designed for young teens.</p>
             </div>
         </div>
 
-        <h2 class="section-title" id="suggestions">Share Your Product Idea</h2>
-        <div class="suggestion-form">
+        <!-- 建议表单 -->
+        <h2 class="section-title" id="suggestions">Share Your Vision</h2>
+        <p class="section-subtitle">Got an idea that could make parenting easier or childhood brighter? Tell us!</p>
+        <div class="suggestion-form-container">
             <form id="suggestionForm">
                 <div class="form-group">
-                    <label for="name">Your Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="name"><i class="fas fa-user"></i> Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="e.g., Sarah Chen" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
                 </div>
                 <div class="form-group">
-                    <label for="ageGroup">Age Group:</label>
+                    <label for="ageGroup"><i class="fas fa-child"></i> Target Age Group</label>
                     <select id="ageGroup" name="ageGroup" required>
-                        <option value="">Select Age Group</option>
-                        <option value="0-3">0-3 Years</option>
-                        <option value="4-7">4-7 Years</option>
-                        <option value="8-12">8-12 Years</option>
-                        <option value="13-15">13-15 Years</option>
+                        <option value="">Which age group does your idea help?</option>
+                        <option value="0-3">0-3 Years (Infants & Toddlers)</option>
+                        <option value="4-7">4-7 Years (Preschool & Early School)</option>
+                        <option value="8-12">8-12 Years (School Age)</option>
+                        <option value="13-15">13-15 Years (Teens)</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="suggestion">Your Product Suggestion:</label>
-                    <textarea id="suggestion" name="suggestion" placeholder="Describe your product idea in detail..." required></textarea>
+                <div class="form-group full-width">
+                    <label for="suggestion"><i class="fas fa-lightbulb"></i> Your Product Idea</label>
+                    <textarea id="suggestion" name="suggestion" placeholder="Describe your product idea in detail. What problem does it solve? How would it work?" required></textarea>
                 </div>
-                <div class="form-group">
-                    <label for="improvement">How can this improve children's lives?</label>
-                    <textarea id="improvement" name="improvement" placeholder="Explain the benefits..." required></textarea>
+                <div class="form-group full-width">
+                    <label for="improvement"><i class="fas fa-heart"></i> The Positive Impact</label>
+                    <textarea id="improvement" name="improvement" placeholder="How will this idea improve the lives of children and parents? What makes it special?" required></textarea>
                 </div>
-                <button type="submit" class="cta-button" style="width: 100%;">Submit Suggestion</button>
+                <button type="submit" class="cta-button" style="width: 100%; padding: 1.2rem; font-size: 1.2rem;">
+                    <i class="fas fa-paper-plane"></i> Submit Your Idea for Community Review
+                </button>
             </form>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 MotherBaby International. A positive community for moms and kids.</p>
-        <p>Every mom is a designer! Together we create better products for our children.</p>
+        <div class="footer-logo"><i class="fas fa-hands-helping"></i> MotherBaby International</div>
+        <p class="footer-tagline">A 100% positive, global community powered by moms. Together, we design the future for our children.</p>
+        <p>© 2025 MotherBaby International. All rights reserved. | Every mom is a designer. | Contact: hello@motherbaby-intl.com</p>
+        <div class="copyright">
+            Made with <i class="fas fa-heart" style="color:#ff7eb3;"></i> for parents everywhere.
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // 平滑滚动
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const offsetTop = element.offsetTop - 100;
+                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+            }
+        }
+        // 表单提交处理（增强版）
+        document.getElementById('suggestionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const userName = document.getElementById('name').value || 'valued member';
+            // 更生动的成功消息
+            alert(`🎉 Amazing idea, ${userName}! Thank you for sharing your creativity with the MotherBaby community. Your suggestion has been submitted and will enter our monthly voting round. Good luck!`);
+            // 重置表单
+            this.reset();
+            // 可选：滚动到顶部
+            scrollToSection('home');
+        });
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 150) {
+                navbar.style.boxShadow = '0 10px 30px rgba(0,0,0,0.15)';
+                navbar.style.padding = '0.8rem 0';
+            } else {
+                navbar.style.boxShadow = 'var(--shadow)';
+                navbar.style.padding = '1.2rem 0';
+            }
+        });
+        // 为所有导航链接添加平滑滚动
+        document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                scrollToSection(targetId.substring(1));
+            });
+        });
+    </script>
 </body>
 </html>
